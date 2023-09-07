@@ -3,7 +3,6 @@ const getProjectRouter=express.Router();
 const Project=require('../models/project');
 
 getProjectRouter.get('/',async(req,res)=>{
-    res.setHeader("Access-Control-Allow-Credentials","true");
     try{
         const projects=await Project.find({}).exec();
         res.status(200).json(projects);
