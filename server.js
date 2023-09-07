@@ -24,8 +24,9 @@ app.use('/updateStatus',updatestatusRouter);
 
 
 app.get('/',(req,res)=>{
-    res.send('Server is running...');
-})
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running");
+});
 
 app.listen(PORT,()=>{
     console.log(`Server listening on http://localhost:${PORT}`);
